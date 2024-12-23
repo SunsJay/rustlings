@@ -1,13 +1,27 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-23 22:32:18
+ * @FilePath: /exam-grading/rustlings/exercises/03_if/if1.rs
+ * @Description: 
+ */
 fn bigger(a: i32, b: i32) -> i32 {
     // TODO: Complete this function to return the bigger number!
     // If both numbers are equal, any of them can be returned.
     // Do not use:
     // - another function call
     // - additional variables
+
+    if a > b {
+        a
+    } else {
+        b
+    }
 }
 
 fn main() {
     // You can optionally experiment here.
+    bigger(10, 8);
 }
 
 // Don't mind this for now :)

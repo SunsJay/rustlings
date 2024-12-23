@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-23 22:30:07
+ * @FilePath: /exam-grading/rustlings/exercises/02_functions/functions4.rs
+ * @Description: 
+ */
 // This store is having a sale where if the price is an even number, you get 10
 // Rustbucks off, but if it's an odd number, it's 3 Rustbucks off.
 // Don't worry about the function bodies themselves, we are only interested in
@@ -8,7 +15,7 @@ fn is_even(num: i64) -> bool {
 }
 
 // TODO: Fix the function signature.
-fn sale_price(price: i64) -> {
+fn sale_price(price: i64) -> i64 {
     if is_even(price) {
         price - 10
     } else {

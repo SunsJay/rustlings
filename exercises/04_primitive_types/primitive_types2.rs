@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-23 22:43:47
+ * @FilePath: /exam-grading/rustlings/exercises/04_primitive_types/primitive_types2.rs
+ * @Description: 
+ */
 // Characters (`char`)
 
 fn main() {
@@ -17,6 +24,8 @@ fn main() {
     // Try a letter, try a digit (in single quotes), try a special character, try a character
     // from a different language than your own, try an emoji 😉
     // let your_character = '';
+
+    let your_character = '🤔';
 
     if your_character.is_alphabetic() {
         println!("Alphabetical!");

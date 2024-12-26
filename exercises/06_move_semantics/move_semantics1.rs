@@ -1,6 +1,13 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-26 20:54:27
+ * @FilePath: /exam-grading/rustlings/exercises/06_move_semantics/move_semantics1.rs
+ * @Description: 
+ */
 // TODO: Fix the compiler error in this function.
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let vec = vec;
+    let mut vec = vec;
 
     vec.push(88);
 

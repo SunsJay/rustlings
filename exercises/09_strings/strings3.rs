@@ -1,13 +1,26 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-30 19:10:18
+ * @FilePath: /rustlings/exercises/09_strings/strings3.rs
+ * @Description: 
+ */
 fn trim_me(input: &str) -> &str {
     // TODO: Remove whitespace from both ends of a string.
+    
+    input.trim()
+    
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this.
+
+    format!("{} world!", input)
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
+    input.replace("cars", "balloons")
 }
 
 fn main() {

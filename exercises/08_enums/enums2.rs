@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-28 21:53:35
+ * @FilePath: /exam-grading/rustlings/exercises/08_enums/enums2.rs
+ * @Description: 
+ */
 #[derive(Debug)]
 struct Point {
     x: u64,
@@ -7,6 +14,11 @@ struct Point {
 #[derive(Debug)]
 enum Message {
     // TODO: Define the different variants used below.
+    Resize { width: u32, height: u32 },
+    Move(Point),
+    Echo(String),
+    ChangeColor(u32, u32, u32),
+    Quit,
 }
 
 impl Message {

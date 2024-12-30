@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-26 21:52:51
+ * @FilePath: /exam-grading/rustlings/exercises/07_structs/structs2.rs
+ * @Description: 
+ */
 #[derive(Debug)]
 struct Order {
     name: String,
@@ -34,7 +41,9 @@ mod tests {
         let order_template = create_order_template();
 
         // TODO: Create your own order using the update syntax and template above!
-        // let your_order =
+        let mut your_order = create_order_template();
+        your_order.name = String::from("Hacker in Rust");
+        your_order.count = 1;
 
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);

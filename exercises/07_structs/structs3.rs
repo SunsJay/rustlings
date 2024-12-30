@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-28 21:52:35
+ * @FilePath: /exam-grading/rustlings/exercises/07_structs/structs3.rs
+ * @Description:
+ */
 // Structs contain data, but can also have logic. In this exercise, we have
 // defined the `Package` struct, and we want to test some logic attached to it.
 
@@ -24,14 +31,19 @@ impl Package {
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn is_international(&self) {
+    fn is_international(&self) -> bool {
         // TODO: Read the tests that use this method to find out when a package
         // is considered international.
+
+        self.sender_country != self.recipient_country 
+        
+        
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn get_fees(&self, cents_per_gram: u32) {
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // TODO: Calculate the package's fees.
+        self.weight_in_grams * cents_per_gram
     }
 }
 

@@ -1,12 +1,19 @@
-// We're collecting different fruits to bake a delicious fruit cake. For this,
-// we have a basket, which we'll represent in the form of a hash map. The key
-// represents the name of each fruit we collect and the value represents how
-// many of that particular fruit we have collected. Three types of fruits -
-// Apple (4), Mango (2) and Lychee (5) are already in the basket hash map. You
-// must add fruit to the basket so that there is at least one of each kind and
-// more than 11 in total - we have a lot of mouths to feed. You are not allowed
-// to insert any more of the fruits that are already in the basket (Apple,
-// Mango, and Lychee).
+/*
+ *@日期: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-30 20:08:55
+ * @FilePath: /rustlings/exercises/11_hashmaps/hashmaps2.rs
+ *@描述：    
+ */
+// 我们正在收集不同的水果来烘烤美味的水果蛋糕。为了这，
+// 我们有一个篮子，我们将以哈希图的形式表示。关键
+// 代表我们收集的每种水果的名称，值代表如何
+// 我们收集了许多特殊的水果。三种水果——
+// 苹果（4）、芒果（2）和荔枝（5）已经在篮子哈希图中。你
+// 必须将水果添加到篮子中，以便每种水果至少有一个，并且
+// 总共超过 11 个人——我们有很多人要养活。你不被允许
+// 插入更多已经在篮子里的水果（苹果，
+// 芒果、荔枝）。
 
 use std::collections::HashMap;
 
@@ -32,6 +39,10 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Insert new fruits if they are not already present in the
         // basket. Note that you are not allowed to put any type of fruit that's
         // already present!
+
+        if fruit != Fruit::Apple && fruit != Fruit::Mango && fruit != Fruit::Lychee {
+            basket.insert(fruit, 1);
+        }
     }
 }
 

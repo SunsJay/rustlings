@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2024-12-30 19:56:09
+ * @FilePath: /rustlings/exercises/11_hashmaps/hashmaps1.rs
+ * @Description: 
+ */
 // A basket of fruits in the form of a hash map needs to be defined. The key
 // represents the name of the fruit and the value represents how many of that
 // particular fruit is in the basket. You have to put at least 3 different
@@ -9,12 +16,15 @@ use std::collections::HashMap;
 fn fruit_basket() -> HashMap<String, u32> {
     // TODO: Declare the hash map.
     // let mut basket =
-
+    
+    let mut basket = HashMap::new();
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
 
     // TODO: Put more fruits in your basket.
+    basket.insert(String::from("apple"), 3);
 
+    basket.insert(String::from("mango"), 4);
     basket
 }
 

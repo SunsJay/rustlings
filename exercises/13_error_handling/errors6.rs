@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-05 19:33:12
+ * @FilePath: /rustlings/exercises/13_error_handling/errors6.rs
+ * @Description: 
+ */
 // Using catch-all error types like `Box<dyn Error>` isn't recommended for
 // library code where callers might want to make decisions based on the error
 // content instead of printing it out or propagating it further. Here, we define
@@ -25,7 +32,9 @@ impl ParsePosNonzeroError {
     }
 
     // TODO: Add another error conversion function here.
-    // fn from_parse_int(???) -> Self { ??? }
+    fn from_parse_int(err: ParseIntError) -> Self { 
+        Self::ParseInt(err)
+     }
 }
 
 #[derive(PartialEq, Debug)]
@@ -43,7 +52,10 @@ impl PositiveNonzeroInteger {
     fn parse(s: &str) -> Result<Self, ParsePosNonzeroError> {
         // TODO: change this to return an appropriate error instead of panicking
         // when `parse()` returns an error.
-        let x: i64 = s.parse().unwrap();
+        let x: i64 = match  s.parse() {
+            Ok(x) => x,
+            Err(err) => return Err(ParsePosNonzeroError::from_parse_int(err)),
+        };
         Self::new(x).map_err(ParsePosNonzeroError::from_creation)
     }
 }

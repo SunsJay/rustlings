@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-04 20:11:41
+ * @FilePath: /rustlings/exercises/13_error_handling/errors3.rs
+ * @Description: 
+ */
 // This is a program that is trying to use a completed version of the
 // `total_cost` function from the previous exercise. It's not working though!
 // Why not? What should we do to fix it?
@@ -15,7 +22,7 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
 
 // TODO: Fix the compiler error by changing the signature and body of the
 // `main` function.
-fn main() {
+fn main() -> Result<(), ParseIntError> {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -28,4 +35,6 @@ fn main() {
         tokens -= cost;
         println!("You now have {tokens} tokens.");
     }
+
+    Ok(())
 }

@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-04 20:08:46
+ * @FilePath: /rustlings/exercises/13_error_handling/errors2.rs
+ * @Description:
+ */
 // Say we're writing a game where you can buy items with tokens. All items cost
 // 5 tokens, and whenever you purchase items there is a processing fee of 1
 // token. A player of the game will type in how many items they want to buy, and
@@ -23,7 +30,10 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     // TODO: Handle the error case as described above.
     let qty = item_quantity.parse::<i32>();
 
-    Ok(qty * cost_per_item + processing_fee)
+    match qty {
+        Ok(qty) => Ok(qty * cost_per_item + processing_fee),
+        Err(e) => Err(e),
+    }
 }
 
 fn main() {

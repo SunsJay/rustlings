@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-06 21:50:22
+ * @FilePath: /rustlings/exercises/15_traits/traits5.rs
+ * @Description: 
+ */
 trait SomeTrait {
     fn some_function(&self) -> bool {
         true
@@ -19,7 +26,7 @@ impl SomeTrait for OtherStruct {}
 impl OtherTrait for OtherStruct {}
 
 // TODO: Fix the compiler error by only changing the signature of this function.
-fn some_func(item: ???) -> bool {
+fn some_func(item: impl SomeTrait + OtherTrait) -> bool {
     item.some_function() && item.other_function()
 }
 

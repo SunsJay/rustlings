@@ -1,9 +1,19 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-05 21:16:25
+ * @FilePath: /rustlings/exercises/15_traits/traits3.rs
+ * @Description: 
+ */
 trait Licensed {
     // TODO: Add a default implementation for `licensing_info` so that
     // implementors like the two structs below can share that default behavior
     // without repeating the function.
     // The default license information should be the string "Default license".
-    fn licensing_info(&self) -> String;
+    fn licensing_info(&self) -> String {
+
+        "Default license".to_string()
+    }
 }
 
 struct SomeSoftware {

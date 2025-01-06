@@ -1,9 +1,24 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-05 21:04:45
+ * @FilePath: /rustlings/exercises/15_traits/traits2.rs
+ * @Description: 
+ */
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 // TODO: Implement the trait `AppendBar` for a vector of strings.
 // `append_bar` should push the string "Bar" into the vector.
+
+impl AppendBar for Vec<String> {
+    fn append_bar(self) -> Self {
+        let mut v = self;
+        v.push(String::from("Bar"));
+        v
+    }
+}
 
 fn main() {
     // You can optionally experiment here.

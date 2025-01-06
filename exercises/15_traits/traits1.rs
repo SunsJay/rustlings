@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-05 21:02:26
+ * @FilePath: /rustlings/exercises/15_traits/traits1.rs
+ * @Description: 
+ */
 // The trait `AppendBar` has only one function which appends "Bar" to any object
 // implementing this trait.
 trait AppendBar {
@@ -6,6 +13,10 @@ trait AppendBar {
 
 impl AppendBar for String {
     // TODO: Implement `AppendBar` for the type `String`.
+    fn append_bar(self) -> Self {
+        format!("{}Bar", self)
+    }
+    
 }
 
 fn main() {

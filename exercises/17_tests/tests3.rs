@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-06 22:19:07
+ * @FilePath: /rustlings/exercises/17_tests/tests3.rs
+ * @Description: 
+ */
 struct Rectangle {
     width: i32,
     height: i32,
@@ -29,13 +36,14 @@ mod tests {
         // TODO: This test should check if the rectangle has the size that we
         // pass to its constructor.
         let rect = Rectangle::new(10, 20);
-        assert_eq!(todo!(), 10); // Check width
-        assert_eq!(todo!(), 20); // Check height
+        assert_eq!(rect.width, 10); // Check width
+        assert_eq!(rect.height, 20); // Check height
     }
 
     // TODO: This test should check if the program panics when we try to create
     // a rectangle with negative width.
     #[test]
+    #[should_panic]
     fn negative_width() {
         let _rect = Rectangle::new(-10, 10);
     }
@@ -43,6 +51,7 @@ mod tests {
     // TODO: This test should check if the program panics when we try to create
     // a rectangle with negative height.
     #[test]
+    #[should_panic]
     fn negative_height() {
         let _rect = Rectangle::new(10, -10);
     }

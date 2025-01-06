@@ -1,3 +1,10 @@
+/*
+ * @Date: 2024-12-23 21:54:33
+ * @LastEditors: SunsJay SunsJay0806@gmail.com
+ * @LastEditTime: 2025-01-06 22:08:59
+ * @FilePath: /rustlings/exercises/quizzes/quiz3.rs
+ * @Description: 
+ */
 // This quiz tests:
 // - Generics
 // - Traits
@@ -12,14 +19,14 @@
 // block to support alphabetical report cards in addition to numerical ones.
 
 // TODO: Adjust the struct as described above.
-struct ReportCard {
-    grade: f32,
+struct ReportCard<T> {
+    grade: T,
     student_name: String,
     student_age: u8,
 }
 
 // TODO: Adjust the impl block as described above.
-impl ReportCard {
+impl<T: std::fmt::Display> ReportCard<T> {
     fn print(&self) -> String {
         format!(
             "{} ({}) - achieved a grade of {}",

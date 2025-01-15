@@ -1,7 +1,7 @@
-// In this exercise, we want to express the concept of multiple owners via the
-// `Rc<T>` type. This is a model of our solar system - there is a `Sun` type and
-// multiple `Planet`s. The planets take ownership of the sun, indicating that
-// they revolve around the sun.
+// IN THIS EXERCISE, WE WANT TO EXPRESS THE CONCEPT OF MULTIPLE OWNERS VIA THE
+// `RC<T>` TYPE. THIS IS A MODEL OF OUR SOLAR SYSTEM - THERE IS A `SUN` TYPE AND
+// MULTIPLE `PLANET`S. THE PLANETS TAKE OWNERSHIP OF THE SUN, INDICATING THAT
+// THEY REVOLVE AROUND THE SUN.
 
 use std::rc::Rc;
 
@@ -60,17 +60,17 @@ mod tests {
         jupiter.details();
 
         // TODO
-        let saturn = Planet::Saturn(Rc::new(Sun));
+        let saturn = Planet::Saturn(Rc::clone(&sun));
         println!("reference count = {}", Rc::strong_count(&sun)); // 7 references
         saturn.details();
 
         // TODO
-        let uranus = Planet::Uranus(Rc::new(Sun));
+        let uranus = Planet::Uranus(Rc::clone(&sun));
         println!("reference count = {}", Rc::strong_count(&sun)); // 8 references
         uranus.details();
 
         // TODO
-        let neptune = Planet::Neptune(Rc::new(Sun));
+        let neptune = Planet::Neptune(Rc::clone(&sun));
         println!("reference count = {}", Rc::strong_count(&sun)); // 9 references
         neptune.details();
 
@@ -92,12 +92,15 @@ mod tests {
         println!("reference count = {}", Rc::strong_count(&sun)); // 4 references
 
         // TODO
+        drop(earth);
         println!("reference count = {}", Rc::strong_count(&sun)); // 3 references
 
         // TODO
+        drop(venus);
         println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
 
         // TODO
+        drop(mercury);
         println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
 
         assert_eq!(Rc::strong_count(&sun), 1);
